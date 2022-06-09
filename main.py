@@ -59,20 +59,27 @@ def fill_hours(driver):
 
 
 def fill_id_and_order(driver):
+    #fill id in text box
     driver.find_element(by=By.XPATH, value='/html/body/div/div/div[8]/div[1]/form/div[1]/input[1]').send_keys(
         '12345678')
     time.sleep(5)
+    #click check id
     driver.find_element(by=By.XPATH, value='/html/body/div/div/div[8]/div[1]/form/div[1]/font[1]').click()
     time.sleep(5)
+    #fill id in text box
     driver.find_element(by=By.XPATH, value='/html/body/div/div/div[8]/div[1]/form/div[1]/input[2]').send_keys(
         '23456789')
     time.sleep(5)
+     #click check id
     driver.find_element(by=By.XPATH, value='/html/body/div/div/div[8]/div[1]/form/div[1]/font[2]').click()
     time.sleep(5)
+    #click hide names
     driver.find_element(by=By.XPATH, value='/html/body/div/div/div[8]/div[1]/form/input[5]').click()
     time.sleep(5)
+    #click finish
     driver.find_element(by=By.XPATH, value='/html/body/div/div/div[8]/div[4]/button[1]').click()
     time.sleep(5)
+    #close the window and finish
     driver.close()
 
 
@@ -83,6 +90,7 @@ press_on_last_date(driver)
 fill_hours(driver)
 fill_id_and_order(driver)
 
+#im not sure we need it
 error_message = "Incorrect username or password."
 # get the errors (if there are)
 errors = driver.find_elements(by=By.CLASS_NAME, value="flash-error")
